@@ -4,6 +4,7 @@ package com.atguigu.eduservice.controller;
 import com.atguigu.commonutils.R;
 import com.atguigu.eduservice.entity.EduTeacher;
 import com.atguigu.eduservice.service.EduTeacherService;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -59,5 +60,22 @@ public class EduTeacherController {
         teacherService.removeById(id);
         return R.ok();
     }
+
+    /**
+     * 分页查询的方法
+     */
+
+    @GetMapping("{page}/{limit}")
+    public R pageList(@PathVariable Long page, @PathVariable Long limit) {
+        Page<EduTeacher> pageParam = new Page<>(page, limit);
+        teacherService.page(pageParam, null);
+        List<EduTeacher> records = pageParam.getRecords();
+        long total = pageParam.getTotal();
+        return R.ok().data("total", total).data("rows", records);
+    }
+
+    /*
+    *
+    * */
 }
 
