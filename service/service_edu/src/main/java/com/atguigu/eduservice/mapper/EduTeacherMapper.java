@@ -17,7 +17,5 @@ import org.springframework.web.bind.annotation.PathVariable;
  */
 @Mapper
 public interface EduTeacherMapper extends BaseMapper<EduTeacher> {
-//    @Select("select * from edu_teacher where id = #{id}");
-//
-//    EduTeacher findById(@Param("id") Integer id);
+
 }

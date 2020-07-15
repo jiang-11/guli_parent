@@ -15,5 +15,5 @@ import org.springframework.web.bind.annotation.PathVariable;
  */
 @Service
 public interface EduTeacherService extends IService<EduTeacher> {
-//    public void selectById(@PathVariable Integer id);
+
 }

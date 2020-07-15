@@ -74,8 +74,16 @@ public class EduTeacherController {
         return R.ok().data("total", total).data("rows", records);
     }
 
-    /*
-    *
-    * */
+
+//    @Autowired
+//    @PutMapping("{id}")
+//    public R updateById(@PathVariable String id, @RequestBody EduTeacher eduTeacher){
+//
+//        eduTeacher.setId(id);
+//        teacherService.updateById(eduTeacher);
+//        return R.ok();
+//
+//    }
+
 }
 

@@ -19,10 +19,4 @@ import org.springframework.stereotype.Service;
 @Service
 public class EduTeacherServiceImpl extends ServiceImpl<EduTeacherMapper, EduTeacher> implements EduTeacherService {
 
-//    @Override
-//    public void selectById(Integer id) {
-//        @Autowired
-//        private Mapper mapper;
-//
-//    }
 }

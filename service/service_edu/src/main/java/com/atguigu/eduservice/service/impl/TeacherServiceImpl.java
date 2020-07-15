@@ -1,4 +1,4 @@
-package com.atguigu.eduservice.service.serviceImpl;
+package com.atguigu.eduservice.service.impl;
 
 import com.atguigu.eduservice.entity.EduTeacher;
 import com.atguigu.eduservice.mapper.EduTeacherMapper;
@@ -11,14 +11,13 @@ import com.atguigu.eduservice.service.TeacherService;
 import org.springframework.stereotype.Service;
 
 
-
 /**
  * @author jiang--
  * @date2020/7/1317:20
  */
 
 @Service
-public class TeacherServiceImpl extends ServiceImpl<EduTeacherMapper,EduTeacher> implements TeacherService {
+public class TeacherServiceImpl extends ServiceImpl<EduTeacherMapper, EduTeacher> implements TeacherService {
 
 
     @Override
@@ -77,4 +76,8 @@ public class TeacherServiceImpl extends ServiceImpl<EduTeacherMapper,EduTeacher>
         baseMapper.selectPage(pageParam, queryWrapper);
     }
 
-}
+
+    }
+
+
+

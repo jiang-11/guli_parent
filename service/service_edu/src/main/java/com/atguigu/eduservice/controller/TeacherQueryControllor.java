@@ -23,6 +23,7 @@ import java.util.List;
 public class TeacherQueryControllor {
     @Autowired
     private TeacherService teacherService;
+
     @GetMapping("{page}/{limit}")
     public R PageQuery(@PathVariable Long page, @PathVariable Long limit, @PathVariable TeacherQuery teacherQuery) {
         Page<EduTeacher> pageParam = new Page<>(page, limit);
@@ -31,5 +32,12 @@ public class TeacherQueryControllor {
         Long total = pageParam.getTotal();
         return R.ok().data("total", total).data("rows", records);
 
+    }
+
+
+    @GetMapping("{id}")
+    public R FindById(@PathVariable Integer id) {
+        EduTeacher eduTeacher = teacherService.getById(id);
+        return R.ok().data("item", eduTeacher);
     }
 }
